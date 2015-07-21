@@ -1,27 +1,25 @@
 package com.spring.sample.core;
 
+import javax.annotation.Resource;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.simple.mail.MailSender;
-import com.spring.simple.mail.MockMailSender;
+
+
 
 @RestController
 public class MailController {
 
-	// instance of mail sender service
-private MailSender mailSender = new MockMailSender();
+	@Resource
+	private MailSender mailSender;
 	
-	//Request Handler Method
-@RequestMapping("/mail")	
-
-public String sendMail()
-{
-	mailSender.send("abc@example.com","Some Subject","the content");
-	
-	return "Mail Sent";
-}
-	
-	
-
+	@RequestMapping("/mail")
+	public String sendMail() {
+		
+		mailSender.send("abc@example.com", "Some subject", "the content");
+		
+		return "Mail sent";
+	}
 }
