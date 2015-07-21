@@ -1,8 +1,8 @@
 Demo Spring MVC Application will be a production grade 
 User Module having features like
-*Signup
-*login
-*email Verification
-*Forgot Password
-*Show Profile
-*Edit Profile
+1)Signup
+2)login
+3)email Verification
+4)Forgot Password
+5)Show Profile
+6)Edit Profile
